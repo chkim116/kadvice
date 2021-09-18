@@ -65,7 +65,7 @@ const advice = random();
 
 ## 함수
 
-### get()
+### 1. get()
 
 -   get() 함수는 명언 리스트를 반환합니다. (배열을 반환)
 -   get 함수는 1 | 2 | 3을 인자로 받을 수 있습니다.
@@ -80,7 +80,7 @@ const advices = kadvice.get();
 const lifeAdvices = kadvice.get(1);
 ```
 
-### random()
+### 2. random()
 
 -   random() 함수는 명언 리스트 중 하나를 랜덤으로 반환 합니다. (객체를 반환)
 -   random 함수는 1 | 2 | 3을 인자로 받을 수 있습니다.
