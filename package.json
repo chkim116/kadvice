@@ -17,9 +17,17 @@
         "build": "tsc",
         "dev": "nodemon -w src/server.ts --exec \"ts-node\" src/server.ts"
     },
-    "keywords": [],
+    "keywords": [
+        "명언",
+        "quote",
+        "aphorism",
+        "korean",
+        "한국어명언",
+        "advice",
+        "wisesaying"
+    ],
     "author": {
-        "name": "kimchanghoe",
+        "name": "chkim116",
         "email": "cskim132@gmail.com"
     },
     "license": "MIT"
