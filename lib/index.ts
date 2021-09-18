@@ -2,32 +2,26 @@ import { data } from "./data";
 import { AdviceType, TagType } from "../@types/type";
 
 const init = () => {
+    const advices = data;
+
     const _shuffle = (array: AdviceType[]) => {
         return array[Math.floor(Math.random() * array.length)];
     };
 
-    const _get = (advices: AdviceType[]) => {
-        return (tag?: TagType) => {
-            if (tag) {
-                return advices.filter((lst) => lst.tag === tag);
-            }
-            return advices;
-        };
+    const get = (tag?: TagType) => {
+        if (tag) {
+            return advices.filter((lst) => lst.tag === tag);
+        }
+        return advices;
     };
 
-    const _random = (advices: AdviceType[]) => {
-        return (tag?: TagType) => {
-            if (tag) {
-                const filter = advices.filter((lst) => lst.tag === tag);
-                return _shuffle(filter);
-            }
-            return _shuffle(advices);
-        };
+    const random = (tag?: TagType) => {
+        if (tag) {
+            const filter = advices.filter((lst) => lst.tag === tag);
+            return _shuffle(filter);
+        }
+        return _shuffle(advices);
     };
-
-    const advices = data;
-    const random = _random(advices);
-    const get = _get(advices);
 
     return { random, get };
 };

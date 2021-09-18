@@ -1,8 +1,8 @@
 //  1 = 삶 2 = 동기부여 3 = 기타
-import { QuoteType } from "../@types/type";
+import { AdviceType } from "../@types/type";
 
 // 기타
-const etc: QuoteType[] = [
+const etc: AdviceType[] = [
     {
         author: "에이브러햄 링컨",
         authorProfile: "미국 16대 대통령",
@@ -68,7 +68,7 @@ const etc: QuoteType[] = [
 ];
 
 // 동기부여
-const motivation: QuoteType[] = [
+const motivation: AdviceType[] = [
     {
         author: "공자",
         authorProfile: "유학자, 세계 4대 성인",
@@ -385,7 +385,7 @@ const motivation: QuoteType[] = [
 ];
 
 // 삶의 자세
-const life: QuoteType[] = [
+const life: AdviceType[] = [
     {
         author: "빌 게이츠",
         authorProfile: "마이크로소프트 창업자",
@@ -680,4 +680,4 @@ const life: QuoteType[] = [
     },
 ];
 
-export const data: QuoteType[] = [...life, ...motivation, ...etc];
+export const data: AdviceType[] = [...life, ...motivation, ...etc];
