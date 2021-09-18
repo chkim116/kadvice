@@ -1,4 +1,4 @@
-import { QuoteType, TagType } from "../@types/type";
+import { QuoteType } from "../@types/type";
 /**
  * 한국어로 된 명언 모음입니다.
  */
@@ -10,7 +10,7 @@ declare const quotes: QuoteType[];
  * const quote = random()
  *
  */
-declare const random: (tag?: TagType | undefined) => QuoteType;
+declare const random: (tag?: 1 | 2 | 3 | undefined) => QuoteType;
 /**
  * 1-3까지의 태그타입을 인자로 넣으면 태그에 해당하는 명언을 불러옵니다.
  *
@@ -18,12 +18,12 @@ declare const random: (tag?: TagType | undefined) => QuoteType;
  *
  * const quotes = get()
  */
-declare const get: (tag?: TagType | undefined) => QuoteType[];
+declare const get: (tag?: 1 | 2 | 3 | undefined) => QuoteType[];
 export { quotes, random, get };
 declare const _default: {
     quotes: QuoteType[];
-    random: (tag?: TagType | undefined) => QuoteType;
-    get: (tag?: TagType | undefined) => QuoteType[];
+    random: (tag?: 1 | 2 | 3 | undefined) => QuoteType;
+    get: (tag?: 1 | 2 | 3 | undefined) => QuoteType[];
 };
 /**
  * 한국어로 된 명언 모음입니다.
