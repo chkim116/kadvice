@@ -14,8 +14,7 @@
     "homepage": "https://github.com/chkim116/kadvice/tree/master/#readme",
     "scripts": {
         "prebuild": "rm -rf dist",
-        "build": "tsc",
-        "dev": "nodemon -w src/server.ts --exec \"ts-node\" src/server.ts"
+        "build": "tsc"
     },
     "keywords": [
         "명언",
