@@ -1,8 +1,9 @@
 import { AdviceType } from "../@types/type";
-export declare const random: (tag?: 1 | 2 | 3 | undefined) => AdviceType, get: (tag?: 1 | 2 | 3 | undefined) => AdviceType[];
+export declare const random: (tag?: 1 | 2 | 3 | undefined) => AdviceType, get: (tag?: 1 | 2 | 3 | undefined) => AdviceType[], daily: () => AdviceType;
 declare const _default: {
     random: (tag?: 1 | 2 | 3 | undefined) => AdviceType;
     get: (tag?: 1 | 2 | 3 | undefined) => AdviceType[];
+    daily: () => AdviceType;
 };
 /**
  * 한국어로 된 명언 모음입니다.

@@ -1,6 +1,6 @@
 {
     "name": "kadvice",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "한국어로 작성된 명언 모음집",
     "main": "dist/lib/index.js",
     "types": "dist/lib/index.d.ts",
@@ -23,7 +23,10 @@
         "korean",
         "한국어명언",
         "advice",
-        "wisesaying"
+        "wisesaying",
+        "react",
+        "dailyadvice",
+        "daily"
     ],
     "author": {
         "name": "chkim116",
