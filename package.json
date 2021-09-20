@@ -1,7 +1,7 @@
 {
     "name": "kadvice",
-    "version": "1.0.6",
-    "description": "한국어로 작성된 명언 모음집",
+    "version": "1.0.8",
+    "description": "advice korean ver",
     "main": "dist/lib/index.js",
     "types": "dist/lib/index.d.ts",
     "repository": {
@@ -17,11 +17,10 @@
         "build": "tsc"
     },
     "keywords": [
-        "명언",
         "quote",
         "aphorism",
         "korean",
-        "한국어명언",
+        "korean advice",
         "advice",
         "wisesaying",
         "react",

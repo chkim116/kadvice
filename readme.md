@@ -12,6 +12,11 @@
 명언 추가나, 원하시는 기능이 있으시면 [이슈](https://github.com/chkim116/kadvice/issues)에 등록해 주세요.
 <br />
 
+## 데모
+
+[데모 보러가기](https://chkim116.github.io/kadvice-demo/)
+[명언 리스트 보기](https://github.com/chkim116/kadvice/blob/master/lib/data.ts)
+
 ## 설치
 
 ```js
