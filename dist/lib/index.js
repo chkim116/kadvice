@@ -19,7 +19,10 @@ var _setStorage = function (key, value) {
 };
 var init = function () {
     var advices = data_1.data;
-    var daily = function () {
+    var daily = function (tag) {
+        var dailyAdvices = tag
+            ? advices.filter(function (lst) { return lst.tag === tag; })
+            : advices;
         var cnt = _getStorage("cnt");
         var midNight = _getStorage("midnight");
         var curTime = new Date().getTime();
@@ -31,16 +34,16 @@ var init = function () {
             midNight = new Date().setHours(24, 0, 0, 0);
             _setStorage("midnight", new Date().setHours(24, 0, 0, 0));
         }
-        if (curTime < midNight) {
+        if (curTime >= midNight) {
             _setStorage("midnight", new Date().setHours(24, 0, 0, 0));
-            if (advices[cnt + 1]) {
+            if (dailyAdvices[cnt + 1]) {
                 _setStorage("cnt", cnt + 1);
-                return advices[cnt + 1];
+                return dailyAdvices[cnt + 1];
             }
             _setStorage("cnt", 0);
-            return advices[0];
+            return dailyAdvices[0];
         }
-        return advices[cnt];
+        return dailyAdvices[cnt];
     };
     var get = function (tag) {
         if (tag) {

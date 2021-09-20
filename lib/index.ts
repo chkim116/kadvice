@@ -20,7 +20,11 @@ const _setStorage = (key: string, value: string | number) => {
 const init = () => {
     const advices = data;
 
-    const daily = () => {
+    const daily = (tag?: TagType) => {
+        const dailyAdvices = tag
+            ? advices.filter((lst) => lst.tag === tag)
+            : advices;
+
         let cnt = _getStorage("cnt") as number;
         let midNight = _getStorage("midnight");
         let curTime = new Date().getTime();
@@ -38,16 +42,16 @@ const init = () => {
         if (curTime >= midNight) {
             _setStorage("midnight", new Date().setHours(24, 0, 0, 0));
 
-            if (advices[cnt + 1]) {
+            if (dailyAdvices[cnt + 1]) {
                 _setStorage("cnt", cnt + 1);
-                return advices[cnt + 1];
+                return dailyAdvices[cnt + 1];
             }
 
             _setStorage("cnt", 0);
-            return advices[0];
+            return dailyAdvices[0];
         }
 
-        return advices[cnt];
+        return dailyAdvices[cnt];
     };
 
     const get = (tag?: TagType) => {

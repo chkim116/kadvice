@@ -4,16 +4,10 @@
 
 <br />
 
-현재 100여개의 명언이 수록되어 있고
+현재 100여개의 명언이 수록되어 있고 삶, 동기부여와 관련된 명언이 90%입니다.
 <br />
-삶, 동기부여와 관련된 명언이 90%입니다.
+명언은 꾸준히 업데이트 될 예정이며 너무 많아지게 될시엔 api로 전환할 예정입니다.
 <br />
-명언은 꾸준히 업데이트 될 예정이며
-<br />
-너무 많아지게 될시엔 api로 전환할 예정입니다.
-<br />
-
----
 
 명언 추가나, 원하시는 기능이 있으시면 [이슈](https://github.com/chkim116/kadvice/issues)에 등록해 주세요.
 <br />
@@ -28,29 +22,11 @@ npm i kadvice
 yarn add kadvice
 ```
 
-## 사용
-
-```js
-import kadvice from "kadvice";
-
-const advices = kadvice.get();
-const advice = kadvice.random();
-
-// or
-
-import { get, random } from "kadvice";
-
-const advices = get();
-const advice = random();
-```
-
----
-
 ## 타입
 
 -   명언 리스트의 객체는 다음와 같은 형식가지고 있습니다.
 
-```js
+```typescript
 {
     author: string;
     authorProfile: string;
@@ -63,6 +39,24 @@ const advice = random();
 -   authorProfile : 말한 사람의 직업 or 별칭.
 -   message : 내용.
 -   tag : 주제에 따른 태그 번호. 1 = 삶 관련, 2 = 동기부여 관련, 3 = 기타
+
+## 사용
+
+```js
+import kadvice from "kadvice";
+
+const advices = kadvice.get();
+const advice = kadvice.random();
+const dailyAdvice = kadvice.daily();
+
+// or
+
+import { get, random, daily } from "kadvice";
+
+const advices = get();
+const advice = random();
+const dailyAdvice = daily();
+```
 
 ## 함수
 
@@ -94,4 +88,26 @@ const advice = kadvice.random();
 // or
 
 const lifeAdvice = kadvice.random(1);
+```
+
+### 3. daily()
+
+-   daily() 함수는 매일 자정에 새로운 명언을 반환합니다.
+-   daily 함수는 1 | 2 | 3을 인자로 받을 수 있습니다.
+-   로컬스토리지를 활용하며, cnt와 midnight을 key로 사용합니다.
+
+#### example
+
+```js
+const daily = kadvice.daily();
+```
+
+리액트에선 다음과 같이 활용하세요.
+
+```js
+const [dailyAdvice, setDailyAdvice] = useState(null);
+
+useEffect(() => {
+    setDailyAdvice(kadvice.daily());
+}, []);
 ```
