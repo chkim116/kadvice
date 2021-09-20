@@ -35,7 +35,7 @@ const init = () => {
             _setStorage("midnight", new Date().setHours(24, 0, 0, 0));
         }
 
-        if (curTime < midNight) {
+        if (curTime >= midNight) {
             _setStorage("midnight", new Date().setHours(24, 0, 0, 0));
 
             if (advices[cnt + 1]) {
