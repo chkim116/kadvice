@@ -1,6 +1,6 @@
 {
     "name": "kadvice",
-    "version": "1.0.8",
+    "version": "1.0.10",
     "description": "advice korean ver",
     "main": "dist/lib/index.js",
     "types": "dist/lib/index.d.ts",

@@ -1,5 +1,5 @@
 import { data } from "./data";
-import { AdviceType, TagType } from "../@types/type";
+import { AdviceType, Init, TagType } from "../@types/type";
 
 const _shuffle = (array: AdviceType[]) => {
     return array[Math.floor(Math.random() * array.length)];
@@ -17,10 +17,10 @@ const _setStorage = (key: string, value: string | number) => {
     localStorage.setItem(key, JSON.stringify(value));
 };
 
-const init = () => {
+const init = (): Init => {
     const advices = data;
 
-    const daily = (tag?: TagType) => {
+    const daily = (tag?: TagType): AdviceType => {
         const dailyAdvices = tag
             ? advices.filter((lst) => lst.tag === tag)
             : advices;
@@ -54,14 +54,14 @@ const init = () => {
         return dailyAdvices[cnt];
     };
 
-    const get = (tag?: TagType) => {
+    const get = (tag?: TagType): AdviceType[] => {
         if (tag) {
             return advices.filter((lst) => lst.tag === tag);
         }
         return advices;
     };
 
-    const random = (tag?: TagType) => {
+    const random = (tag?: TagType): AdviceType => {
         if (tag) {
             const filter = advices.filter((lst) => lst.tag === tag);
             return _shuffle(filter);
@@ -74,28 +74,4 @@ const init = () => {
 
 export const { random, get, daily } = init();
 
-/**
- * 한국어로 된 명언 모음입니다.
- *
- * ---
- * 기본 형식은 다음과 같습니다.
- * @function get(tag?: 1 | 2 | 3)
- *
- * const advices = kadvice.get();
- *
- * tag 번호에 따라 명언의 유형을 달리 불러올 수도 있습니다.
- *
- * const advices = kadvice.get(1);
- *
- *  ---
- *
- * random() 함수는 기본적으로 하나를 랜덤으로 불러옵니다.
- * @function random(tag?: 1 | 2 | 3)
- *
- * const advice = kadvice.random();
- *
- * tag 번호에 따라 해당하는 태그의 명언 중 하나를 갖고 올 수도있습니다.
- *
- * const advice = kadvice.random(1);
- */
-export default { random, get, daily };
+export default init();
