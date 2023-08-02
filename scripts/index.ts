@@ -1,5 +1,8 @@
 import { KadviceService } from './KadviceService';
-import { getKadviceStorageService } from './KadviceStorageService';
+import {
+  KadviceStorageService,
+  getKadviceStorageService,
+} from './KadviceStorageService';
 import { getAdviceFixtures } from './utils/getAdviceFixture';
 
 function getKadviceService() {
@@ -18,4 +21,5 @@ function getKadviceService() {
 }
 
 export const kadvice = getKadviceService();
+export { KadviceService, KadviceStorageService, getAdviceFixtures };
 export * from './models';
