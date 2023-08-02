@@ -16,6 +16,7 @@ export default defineConfig(() => ({
     lib: {
       entry: 'scripts/index.ts',
       name: 'kadvice',
+      fileName: 'index',
     },
   },
   test: {
