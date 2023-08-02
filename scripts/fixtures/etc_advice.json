@@ -1,0 +1,62 @@
+[
+  {
+    "author": "에이브러햄 링컨",
+    "authorProfile": "미국 16대 대통령",
+    "message": "만약 당신이 누군가의 인격을 시험해 보고 싶다면, 그에게 권력을 줘 보라.",
+    "tag": 3
+  },
+  {
+    "author": "루드비히 비트겐슈타인",
+    "authorProfile": "철학자",
+    "message": "말할 수 없는 것에 대해서는 침묵해야 한다.",
+    "tag": 3
+  },
+  {
+    "author": "볼테르",
+    "authorProfile": "작가",
+    "message": "사람들은 할 말이 없으면 욕을 한다.",
+    "tag": 3
+  },
+  {
+    "author": "프리드리히 니체",
+    "authorProfile": "철학자",
+    "message": "한낱 빛 따위가 어찌 어둠을 알 랴.",
+    "tag": 3
+  },
+  {
+    "author": "스티브 잡스",
+    "authorProfile": "애플의 창업자",
+    "message": "창조란 모든 것을 연결하는 것이다.",
+    "tag": 3
+  },
+  {
+    "author": "구인회",
+    "authorProfile": "LG그룹의 창업자",
+    "message": "한 번 사람을 믿으면 모두 맡기십시오.",
+    "tag": 3
+  },
+  {
+    "author": "파블로 피카소",
+    "authorProfile": "화가",
+    "message": "좋은 예술가는 베끼고, 훌륭한 예술가는 훔친다.",
+    "tag": 3
+  },
+  {
+    "author": "알렉스 퍼거슨",
+    "authorProfile": "축구 감독",
+    "message": "트위터는 인생의 낭비다. 인생에선 더 많은 것들을 할 수 있다.",
+    "tag": 3
+  },
+  {
+    "author": "마크 트웨인",
+    "authorProfile": "작가",
+    "message": "10월, 주식 투자에 특히 위험한 달 중 하나다. 다른 위험한 달로는 7월, 1월, 9월, 4월, 11월, 5월, 3월, 6월, 12월, 8월, 그리고 2월이 있다.",
+    "tag": 3
+  },
+  {
+    "author": "증권 시장의 격언",
+    "authorProfile": "-",
+    "message": "골이 깊으면 산도 높다.",
+    "tag": 3
+  }
+]

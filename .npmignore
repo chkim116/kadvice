@@ -1,2 +1,6 @@
 tsconfig.json
-lib
+vite.config.tsconfig
+scripts
+coverage
+.prettierrc
+.eslintrc

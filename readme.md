@@ -5,19 +5,19 @@
 <br />
 
 현재 100여개의 명언이 수록되어 있고 삶, 동기부여와 관련된 명언이 90%입니다.
-<br />
-명언은 꾸준히 업데이트 될 예정이며 너무 많아지게 될시엔 api로 전환할 예정입니다.
+
 <br />
 
 명언 추가나, 원하시는 기능이 있으시면 [이슈](https://github.com/chkim116/kadvice/issues)에 등록해 주세요.
+
 <br />
 
-## 데모
+## 🌐 Demo
 
 [데모 보러가기](https://chkim116.github.io/kadvice-demo/)
-[명언 리스트 보기](https://github.com/chkim116/kadvice/blob/master/lib/data.ts)
+[명언 리스트 보기](https://github.com/chkim116/kadvice/blob/master/scripts/fixtures/)
 
-## 설치
+## 📦 Install
 
 ```js
 npm i kadvice
@@ -27,84 +27,75 @@ npm i kadvice
 yarn add kadvice
 ```
 
-## 타입
+## ⌨️ Type
 
--   명언 리스트의 객체는 다음와 같은 형식가지고 있습니다.
+| 타입명        | 타입          | 설명                                                           |
+| ------------- | ------------- | -------------------------------------------------------------- |
+| author        | string        | 말한 사람의 이름                                               |
+| authorProfile | string        | 말한 사람의 직업 or 별칭                                       |
+| message       | string        | 말한 내용                                                      |
+| tag           | `1`, `2`, `3` | 주제에 따른 태그 번호.1 = 삶 관련, 2 = 동기부여 관련, 3 = 기타 |
 
-```typescript
-{
-    author: string;
-    authorProfile: string;
-    message: string;
-    tag: 1 | 2 | 3;
-}
-```
-
--   author : 말한 사람의 이름.
--   authorProfile : 말한 사람의 직업 or 별칭.
--   message : 내용.
--   tag : 주제에 따른 태그 번호. 1 = 삶 관련, 2 = 동기부여 관련, 3 = 기타
-
-## 사용
+## 🔨 Usage
 
 ```js
-import kadvice from "kadvice";
+import { kadvice } from 'kadvice';
 
-const advices = kadvice.get();
-const advice = kadvice.random();
-const dailyAdvice = kadvice.daily();
+const advices = kadvice.getAll();
+const advice = kadvice.getOne();
+const dailyAdvice = kadvice.getOneByDaily();
+```
+
+## 🗃️ API
+
+### 1. getAll()
+
+- `getAll()` 함수는 전체 명언 리스트를 반환합니다. (배열을 반환)
+- `getAll` 함수는 1 | 2 | 3을 인자로 받아 특정 태그의 전체 명언 리스트를 반환합니다.
+
+#### Example
+
+```js
+const advices = kadvice.getAll();
 
 // or
 
-import { get, random, daily } from "kadvice";
-
-const advices = get();
-const advice = random();
-const dailyAdvice = daily();
+const lifeAdvices = kadvice.getAll(1);
 ```
 
-## 함수
+---
 
-### 1. get()
+### 2. getOne()
 
--   get() 함수는 명언 리스트를 반환합니다. (배열을 반환)
--   get 함수는 1 | 2 | 3을 인자로 받을 수 있습니다.
+- `getOne()` 함수는 명언 리스트 중 하나를 랜덤으로 반환 합니다. (객체를 반환)
+- `getOne` 함수는 1 | 2 | 3을 인자로 받아 특정 태그의 명언 리스트 중 하나를 랜덤으로 반환합니다.
 
-#### example
+#### Example
 
 ```js
-const advices = kadvice.get();
+const advice = kadvice.getOne();
 
 // or
 
-const lifeAdvices = kadvice.get(1);
+const lifeAdvice = kadvice.getOne(1);
 ```
 
-### 2. random()
+---
 
--   random() 함수는 명언 리스트 중 하나를 랜덤으로 반환 합니다. (객체를 반환)
--   random 함수는 1 | 2 | 3을 인자로 받을 수 있습니다.
+### 3. getOneByDaily()
 
-#### example
+- `daily()` 함수는 매일 자정에 새로운 명언을 반환합니다.
+- `daily` 함수는 1 | 2 | 3을 인자로 받아 특정 태그의 명언을 반환합니다.
+- 내부적으로 로컬스토리지를 활용하며, `count`와 `midNight`을 key로 사용합니다.
 
-```js
-const advice = kadvice.random();
-
-// or
-
-const lifeAdvice = kadvice.random(1);
-```
-
-### 3. daily()
-
--   daily() 함수는 매일 자정에 새로운 명언을 반환합니다.
--   daily 함수는 1 | 2 | 3을 인자로 받을 수 있습니다.
--   로컬스토리지를 활용하며, cnt와 midnight을 key로 사용합니다.
-
-#### example
+#### Example
 
 ```js
-const daily = kadvice.daily();
+const daily = kadvice.getOneByDaily();
+
+or;
+
+const daily = kadvice.getOneByDaily(1);
 ```
 
 리액트에선 다음과 같이 활용하세요.
@@ -113,6 +104,6 @@ const daily = kadvice.daily();
 const [dailyAdvice, setDailyAdvice] = useState(null);
 
 useEffect(() => {
-    setDailyAdvice(kadvice.daily());
+  setDailyAdvice(kadvice.getOneByDaily());
 }, []);
 ```
