@@ -2,14 +2,15 @@
   "name": "kadvice",
   "version": "2.0.0",
   "description": "advice korean ver",
+  "private": true,
   "type": "module",
-  "main": "dist/scripts/kadvice.umd.cjs",
-  "module": "dist/scripts/kadvice.js",
-  "types": "dist/scripts/index.d.ts",
+  "main": "./dist/scripts/index.umd.cjs",
+  "module": "./dist/scripts/index.js",
+  "types": "./dist/scripts/index.d.ts",
   "exports": {
     ".": {
-      "import": "./kadvice.js",
-      "require": "./kadvice.umd.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     }
   },
   "repository": {
