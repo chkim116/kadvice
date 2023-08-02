@@ -39,19 +39,19 @@ export class KadviceService implements KadviceServiceModel {
   }
 
   /**
-   * @deprecated
+   * @deprecated getAll
    */
   get(tagNumber?: KadviceTagType) {
     return this.getAll(tagNumber);
   }
   /**
-   * @deprecated
+   * @deprecated getOne
    */
   random(tagNumber?: KadviceTagType) {
     return this.getOne(tagNumber);
   }
   /**
-   * @deprecated
+   * @deprecated getOneByDaily
    */
   daily(tagNumber?: KadviceTagType) {
     return this.getOneByDaily(tagNumber);

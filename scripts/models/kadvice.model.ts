@@ -44,9 +44,9 @@ export interface KadviceServiceModel {
    * @param tag
    * @example
    * ```
-   * const advices = kadvice.get(); // KadviceJsonModel[]
+   * const advices = kadvice.getAll(); // KadviceJsonModel[]
    * // tag에 따라 명언의 유형을 달리 불러올 수 있다.
-   * const advices = kadvice.get(1); // KadviceJsonModel[]
+   * const advices = kadvice.getAll(1); // KadviceJsonModel[]
    * ```
    */
   getAll: (tag?: KadviceTagType) => KadviceJsonModel[];
@@ -60,10 +60,10 @@ export interface KadviceServiceModel {
    * @param tag
    * @example
    * ```
-   * const advices = kadvice.random(); // => KadviceJsonModel
+   * const advices = kadvice.getOne(); // => KadviceJsonModel
    *
    * // tag에 따라 명언의 유형을 달리 불러올 수 있다.
-   * const advices = kadvice.random(1); // => KadviceJsonModel
+   * const advices = kadvice.getOne(1); // => KadviceJsonModel
    * ```
    */
   getOne: (tag?: KadviceTagType) => KadviceJsonModel;
@@ -79,10 +79,10 @@ export interface KadviceServiceModel {
    *
    * @param tag
    * ```
-   * const dailyAdvice = kadvice.daily(); // AdviceType
+   * const dailyAdvice = kadvice.getOneByDaily(); // AdviceType
    *
    * // tag에 따라 명언의 유형을 달리 불러올 수도 있습니다.
-   * const dailyAdvice = kadvice.daily(1);
+   * const dailyAdvice = kadvice.getOneByDaily(1);
    * ```
    */
   getOneByDaily: (tag?: KadviceTagType) => KadviceJsonModel;

@@ -1,16 +1,14 @@
-# 한국어로 된 명언
+# Kadvice
 
-한국어로 번역된 명언 모음집입니다. 영어의 고통에서 해방되세요.
+## ⚡️ Fixtures
 
-<br />
+한국어 기반 명언 모음집입니다. 영어의 고통에서 해방되세요.
 
-현재 100여개의 명언이 수록되어 있고 삶, 동기부여와 관련된 명언이 90%입니다.
-
-<br />
-
-명언 추가나, 원하시는 기능이 있으시면 [이슈](https://github.com/chkim116/kadvice/issues)에 등록해 주세요.
-
-<br />
+- 💡 한국어 기반 명언 모음집
+- 🛠️ 필요에 따라 명언 모음을 변경할 수 있는 커스터마이징 기능
+- 🔩 7KB의 작은 용량 (Gzip 기준)
+- 🔑 TypeScript 완벽 지원
+- 📦 삶과 동기부여 등에 대한 100여개의 명연
 
 ## 🌐 Demo
 
@@ -101,9 +99,79 @@ const daily = kadvice.getOneByDaily(1);
 리액트에선 다음과 같이 활용하세요.
 
 ```js
-const [dailyAdvice, setDailyAdvice] = useState(null);
+const [dailyAdvice, setDailyAdvice] = kadvice.getOne();
 
-useEffect(() => {
-  setDailyAdvice(kadvice.getOneByDaily());
-}, []);
+const handleClick = () => {
+  setDailyAdvice(kadvice.getOne());
+};
+```
+
+## Customizing
+
+- 커스터마이징 기능을 지원합니다.
+
+```tsx
+import { KadviceService, KadviceStorageService } from "kadvice";
+
+const sampleJson: KadviceJsonModel[] = [
+  {
+    author: 'Alice',
+    authorProfile: 'Designer',
+    message: 'This is message number 1.',
+    tag: 1,
+  },
+  {
+    author: 'Bob',
+    authorProfile: 'Doctor',
+    message: 'This is message number 2.',
+    tag: 2,
+  },
+  // ...etc
+];
+
+function getCustomAdvice() {
+  return new KadviceService(sampleJson, new KadviceStorageService()));
+}
+
+const kadvice = getCustomAdvice();
+```
+
+- 원하는 명언을 추가할 수 있습니다.
+
+```tsx
+import { KadviceService, KadviceStorageService, getAdviceFixtures } from "kadvice";
+
+const sampleJson: KadviceJsonModel[] = [
+  ...getAdviceFixtures(),
+  {
+    author: 'Alice',
+    authorProfile: 'Designer',
+    message: 'This is message number 1.',
+    tag: 1,
+  },
+  {
+    author: 'Bob',
+    authorProfile: 'Doctor',
+    message: 'This is message number 2.',
+    tag: 2,
+  },
+  // ...etc
+];
+
+function getCustomAdvice() {
+  return new KadviceService(sampleJson, new KadviceStorageService()));
+}
+
+const kadvice = getCustomAdvice();
+```
+
+- 원하는 localStorage key로 변경할 수 있습니다.
+
+```tsx
+function getCustomAdvice() {
+  return new KadviceService(sampleJson, new KadviceStorageService('customCountKey', 'customMidNightKey')));
+}
+
+const kadvice = getCustomAdvice();
+
 ```
