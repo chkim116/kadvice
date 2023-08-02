@@ -39,7 +39,7 @@ yarn add kadvice
 ## 🔨 Usage
 
 ```js
-import kadvice from 'kadvice';
+import { kadvice } from 'kadvice';
 
 const advices = kadvice.getAll();
 const advice = kadvice.getOne();
