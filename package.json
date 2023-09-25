@@ -3,9 +3,9 @@
   "version": "2.0.1",
   "description": "advice korean ver",
   "type": "module",
-  "main": "./dist/scripts/index.umd.cjs",
-  "module": "./dist/scripts/index.js",
-  "types": "./dist/scripts/index.d.ts",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
